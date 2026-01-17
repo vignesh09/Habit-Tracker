@@ -7,6 +7,10 @@ export interface Task {
   total: number;
   points: number;
   icon: string;
+  category: 'Mind' | 'BODY' | 'SOUL';
+  duration?: string;
+  streak?: string;
+  autoTracked?: boolean;
 }
 
 interface HabitsContextType {
@@ -18,10 +22,40 @@ interface HabitsContextType {
 const HabitsContext = createContext<HabitsContextType | undefined>(undefined);
 
 const INITIAL_TASKS: Task[] = [
-  { key: "breath", title: "Breath exercise", completed: 2, total: 7, points: 10, icon: "🫧" },
-  { key: "sleep", title: "8h sleep", completed: 2, total: 7, points: 140, icon: "💤" },
-  { key: "steps", title: "10 000 steps", completed: 2, total: 7, points: 140, icon: "👟" },
-  { key: "move", title: "Move 30 min", completed: 2, total: 7, points: 140, icon: "🏋️" },
+  {
+    key: "sharpen-mind",
+    title: "Sharpen your mind",
+    completed: 0,
+    total: 1,
+    points: 15,
+    icon: "🧠",
+    category: 'Mind',
+    duration: '1–2 min',
+    streak: '7-day streak'
+  },
+  {
+    key: "steps",
+    title: "10k steps today",
+    completed: 0,
+    total: 1,
+    points: 25,
+    icon: "👟",
+    category: 'BODY',
+    duration: 'Auto-tracked',
+    streak: '7-day streak',
+    autoTracked: true
+  },
+  {
+    key: "meditation",
+    title: "Start meditating",
+    completed: 0,
+    total: 1,
+    points: 10,
+    icon: "💜",
+    category: 'SOUL',
+    duration: '30 sec',
+    streak: '7-day streak'
+  },
 ];
 
 export function HabitsProvider({ children }: { children: ReactNode }) {

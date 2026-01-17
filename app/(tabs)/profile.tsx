@@ -131,7 +131,7 @@ export default function ProfileScreen() {
             <Switch
               value={notificationsEnabled}
               onValueChange={setNotificationsEnabled}
-              trackColor={{ false: '#E6DDD1', true: '#F3C980' }}
+              trackColor={{ false: '#E8E0F0', true: '#D4A961' }}
               thumbColor={notificationsEnabled ? '#FFFFFF' : '#f4f3f4'}
             />
           </View>
@@ -143,7 +143,7 @@ export default function ProfileScreen() {
             <Switch
               value={darkModeEnabled}
               onValueChange={setDarkModeEnabled}
-              trackColor={{ false: '#E6DDD1', true: '#F3C980' }}
+              trackColor={{ false: '#E8E0F0', true: '#D4A961' }}
               thumbColor={darkModeEnabled ? '#FFFFFF' : '#f4f3f4'}
             />
           </View>
@@ -155,7 +155,7 @@ export default function ProfileScreen() {
             <Switch
               value={weeklyReportEnabled}
               onValueChange={setWeeklyReportEnabled}
-              trackColor={{ false: '#E6DDD1', true: '#F3C980' }}
+              trackColor={{ false: '#E8E0F0', true: '#D4A961' }}
               thumbColor={weeklyReportEnabled ? '#FFFFFF' : '#f4f3f4'}
             />
           </View>
@@ -233,7 +233,8 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7F3EC',
+    backgroundColor: '#F5F0FA',
+    paddingTop: 20,
   },
   header: {
     alignItems: 'center',
@@ -245,12 +246,12 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: '#F3C980',
+    backgroundColor: '#D4A961',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 16,
     borderWidth: 3,
-    borderColor: '#E6DDD1',
+    borderColor: '#E8E0F0',
   },
   avatarEmoji: {
     fontSize: 48,
@@ -259,13 +260,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: 'Georgia',
     fontWeight: 'bold',
-    color: '#2E241B',
+    color: '#2D3748',
     marginBottom: 4,
   },
   userEmail: {
     fontSize: 14,
     fontFamily: 'Georgia',
-    color: '#7D6A54',
+    color: '#718096',
   },
   statsContainer: {
     flexDirection: 'row',
@@ -277,17 +278,17 @@ const styles = StyleSheet.create({
   statCard: {
     flex: 1,
     minWidth: '45%',
-    backgroundColor: '#FFF8EE',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 16,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#E6DDD1',
-    shadowColor: '#C3B39B',
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 2,
+    borderColor: '#E8E0F0',
+    shadowColor: '#000',
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 4,
   },
   statEmoji: {
     fontSize: 32,
@@ -323,12 +324,12 @@ const styles = StyleSheet.create({
   achievementCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFF8EE',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 16,
     gap: 12,
     borderWidth: 1,
-    borderColor: '#E6DDD1',
+    borderColor: '#E8E0F0',
   },
   achievementLocked: {
     opacity: 0.6,
@@ -367,7 +368,7 @@ const styles = StyleSheet.create({
     width: 28,
     height: 28,
     borderRadius: 14,
-    backgroundColor: '#E6DDD1',
+    backgroundColor: '#E8E0F0',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -375,12 +376,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   progressCard: {
-    backgroundColor: '#FFF8EE',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 16,
     gap: 12,
     borderWidth: 1,
-    borderColor: '#E6DDD1',
+    borderColor: '#E8E0F0',
   },
   progressRow: {
     flexDirection: 'row',
@@ -399,12 +400,12 @@ const styles = StyleSheet.create({
     color: '#2E241B',
   },
   settingsCard: {
-    backgroundColor: '#FFF8EE',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 16,
     gap: 16,
     borderWidth: 1,
-    borderColor: '#E6DDD1',
+    borderColor: '#E8E0F0',
   },
   settingRow: {
     flexDirection: 'row',
@@ -428,10 +429,10 @@ const styles = StyleSheet.create({
     color: '#7D6A54',
   },
   actionsCard: {
-    backgroundColor: '#FFF8EE',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: '#E6DDD1',
+    borderColor: '#E8E0F0',
     overflow: 'hidden',
   },
   actionButton: {
@@ -440,7 +441,7 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 12,
     borderBottomWidth: 1,
-    borderBottomColor: '#E6DDD1',
+    borderBottomColor: '#E8E0F0',
   },
   actionIcon: {
     fontSize: 20,

@@ -6,7 +6,6 @@ import {
   ScrollView,
   TouchableOpacity,
   Dimensions,
-  ImageBackground,
   Alert,
   Animated,
 } from 'react-native';
@@ -47,7 +46,6 @@ const GIFT_CARDS = [
     darkColor: '#E68A00',
     description: 'Gift Card for shopping',
     pattern: 'radial',
-    image: require('../../assets/images/Amazon-giftcard.png'),
     category: 'shopping',
     featured: true,
   },
@@ -181,7 +179,7 @@ export default function RewardsScreen() {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       {/* Hero Section */}
       <LinearGradient
-        colors={['#F3C980', '#E0B570', '#D4A961']}
+        colors={['#D4A961', '#C69C52', '#B88F43']}
         style={styles.hero}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
@@ -273,24 +271,13 @@ export default function RewardsScreen() {
                 activeOpacity={0.8}
                 disabled={isRedeemed}
               >
-                {card.image ? (
-                  <ImageBackground
-                    source={card.image}
-                    style={[styles.cardContent, isRedeemed && styles.cardRedeemed]}
-                    imageStyle={styles.cardImageStyle}
-                  >
-                    <View style={styles.cardOverlay} />
-                    {renderCardContent(card, isRedeemed, canAfford, userCoins, progress)}
-                  </ImageBackground>
-                ) : (
-                  <LinearGradient
-                    colors={card.gradient as any}
-                    style={[styles.cardContent, isRedeemed && styles.cardRedeemed]}
-                    {...gradientProps}
-                  >
-                    {renderCardContent(card, isRedeemed, canAfford, userCoins, progress)}
-                  </LinearGradient>
-                )}
+                <LinearGradient
+                  colors={card.gradient as any}
+                  style={[styles.cardContent, isRedeemed && styles.cardRedeemed]}
+                  {...gradientProps}
+                >
+                  {renderCardContent(card, isRedeemed, canAfford, userCoins, progress)}
+                </LinearGradient>
               </TouchableOpacity>
             );
           })}
@@ -396,7 +383,7 @@ function renderCardContent(
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7F3EC',
+    backgroundColor: '#F5F0FA',
   },
   hero: {
     paddingVertical: 32,
@@ -445,12 +432,12 @@ const styles = StyleSheet.create({
   },
   statBox: {
     flex: 1,
-    backgroundColor: '#FFF8EE',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 16,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#E6DDD1',
+    borderColor: '#E8E0F0',
   },
   statValue: {
     fontSize: 28,
@@ -472,17 +459,17 @@ const styles = StyleSheet.create({
   categoryChip: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFF8EE',
+    backgroundColor: '#FFFFFF',
     borderRadius: 999,
     paddingHorizontal: 16,
     paddingVertical: 10,
     gap: 6,
     borderWidth: 1,
-    borderColor: '#E6DDD1',
+    borderColor: '#E8E0F0',
   },
   categoryChipActive: {
-    backgroundColor: '#F3C980',
-    borderColor: '#E0B570',
+    backgroundColor: '#D4A961',
+    borderColor: '#C69C52',
   },
   categoryEmoji: {
     fontSize: 16,
@@ -682,13 +669,13 @@ const styles = StyleSheet.create({
   tipCard: {
     marginHorizontal: 24,
     marginBottom: 24,
-    backgroundColor: '#FFF8EE',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 20,
     flexDirection: 'row',
     gap: 16,
     borderWidth: 1,
-    borderColor: '#E6DDD1',
+    borderColor: '#E8E0F0',
   },
   tipEmoji: {
     fontSize: 32,
