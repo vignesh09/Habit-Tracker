@@ -41,7 +41,7 @@ const COMMON_HABITS = [
 ];
 
 export default function ExploreScreen() {
-  const { tasks, addTask } = useHabits();
+  const { myHabits, addTask } = useHabits();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -119,7 +119,7 @@ export default function ExploreScreen() {
         </Text>
         <View style={styles.habitsList}>
           {filteredHabits.map((habit) => {
-            const isAdded = tasks.some(task => task.key === habit.id);
+            const isAdded = myHabits.some(h => h.key === habit.id);
             return (
               <View key={habit.id} style={styles.habitCard}>
                 <View style={styles.habitIcon}>
